@@ -25,7 +25,7 @@ function GenerateAccountModal ({toggleClose}) {
                 lastname: lastName
             }
 
-            const path = process.env.HOST;
+            const path = process.env.REACT_APP_API_URL;
 
             console.log(path);
 
