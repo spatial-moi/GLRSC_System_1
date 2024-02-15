@@ -26,7 +26,7 @@ function GenerateAccountModal ({toggleClose}) {
             }
 
             const config = {
-                url: 'https://glrsc-system-1-27a1742ceb52.herokuapp.com/generate',
+                url: '/generate',
                 method: 'post',
                 data: account,
                 headers: {
