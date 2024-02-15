@@ -3,7 +3,6 @@
   "name": "midpoint_routing",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://glrsc-system-1-27a1742ceb52.herokuapp.com",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
