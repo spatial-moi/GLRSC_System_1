@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/midpoint_routing/static/css/main.b0b50e4e.css",
-    "main.js": "/midpoint_routing/static/js/main.c44a5655.js",
+    "main.js": "/midpoint_routing/static/js/main.b399f5d6.js",
     "static/js/592.9945e27c.chunk.js": "/midpoint_routing/static/js/592.9945e27c.chunk.js",
     "index.html": "/midpoint_routing/index.html",
     "main.b0b50e4e.css.map": "/midpoint_routing/static/css/main.b0b50e4e.css.map",
-    "main.c44a5655.js.map": "/midpoint_routing/static/js/main.c44a5655.js.map",
+    "main.b399f5d6.js.map": "/midpoint_routing/static/js/main.b399f5d6.js.map",
     "592.9945e27c.chunk.js.map": "/midpoint_routing/static/js/592.9945e27c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b0b50e4e.css",
-    "static/js/main.c44a5655.js"
+    "static/js/main.b399f5d6.js"
   ]
 }
