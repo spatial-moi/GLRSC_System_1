@@ -10,10 +10,11 @@ function logOut() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const dispatch = useDispatch()
 
+    const path = process.env.REACT_APP_API_URL;
     function logOut_(event) {
         const config = {
                  method: 'post',
-                   url: '/logout',
+                   url: path + '/logout',
                headers: {
               'Content-Type': 'multipart/form-data',
               'Authorization': "Bearer " + localStorage.getItem('access_token')

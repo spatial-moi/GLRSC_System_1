@@ -27,8 +27,6 @@ function GenerateAccountModal ({toggleClose}) {
 
             const path = process.env.REACT_APP_API_URL;
 
-            console.log(path);
-
             const config = {
                 url: path + '/generate',
                 method: 'post',
