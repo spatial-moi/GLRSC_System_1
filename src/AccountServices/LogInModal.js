@@ -19,11 +19,9 @@ function LogInModal( {toggleClose} ) {
             password: password
         }
 
-        const path = process.env.REACT_APP_API_URL;
-
         const config = {
             method: 'post',
-            url: path + '/login_token',
+            url: '/login_token',
             data: account,
             headers: {
                 'Content-Type': 'multipart/form-data',

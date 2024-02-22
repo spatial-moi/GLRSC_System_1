@@ -10,11 +10,10 @@ function deleteProfile() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const dispatch = useDispatch()
 
-    const path = process.env.REACT_APP_API_URL;
     function deleteProfile_(event) {
         const config = {
             method: 'delete',
-            url: path + '/delete',
+            url: '/delete',
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': "Bearer " + localStorage.getItem('access_token')

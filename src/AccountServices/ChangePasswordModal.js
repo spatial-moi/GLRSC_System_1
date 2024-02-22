@@ -17,11 +17,9 @@ function ChangePasswordModal( {toggleClose} ) {
             new_password: newPassword
         }
 
-        const path = process.env.REACT_APP_API_URL;
-
         const config = {
             method: 'patch',
-            url: path + '/password',
+            url: '/password',
             data: passwords,
             headers: {
                 'Content-Type': 'multipart/form-data',
