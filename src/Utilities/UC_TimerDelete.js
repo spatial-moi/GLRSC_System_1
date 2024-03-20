@@ -33,9 +33,11 @@ const UC_TimerDelete = ({targetInfo, usefulKey}) => {
         };
         console.log(request_info)
 
+        const path = process.env.REACT_APP_API_URL
+
         const config = {
             method: 'post',
-            url: '/getMidpoint',
+            url: path + '/getMidpoint',
             data: request_info,
             timeout: 15000,
             headers: {

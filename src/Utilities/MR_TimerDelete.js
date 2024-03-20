@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {useDispatch, useSelector} from 'react-redux'
 import { MR_useCountdown } from "./MR_useCountdown";
 import DateTimeDisplay from "./DateTimeDisplay"
@@ -7,7 +7,6 @@ import { updateRequest } from "../redux/requestOutSlice";
 import {messageAdded} from "../redux/geMessageListSlice";
 import axios from "axios";
 import {ucAdd, ucReset} from "../redux/userConsoleMessageSlice";
-import Midpoint_Router from "../RoutingService/Midpoint_Router";
 
 
 const ShowCounter = ({ minutes, seconds }) => {
@@ -28,9 +27,11 @@ const MR_TimerDelete = ({ targetDate }) => {
         if (minutes + seconds <= 0 && requestOut === true) {
             dispatch(updateRequest())
 
+            const path = process.env.REACT_APP_API_URL
+
             const config2 = {
                 method: 'patch',
-                url: '/getOwnerMidpoint',
+                url: path + '/getOwnerMidpoint',
                 timeout: 15000,
                 headers: {
                     'Content-Type': 'multipart/form-data',
@@ -52,7 +53,7 @@ const MR_TimerDelete = ({ targetDate }) => {
 
             const config = {
                 method: 'delete',
-                url: '/delete_request',
+                url: path + '/delete_request',
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': "Bearer " + localStorage.getItem('access_token')

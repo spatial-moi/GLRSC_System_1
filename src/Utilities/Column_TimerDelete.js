@@ -30,9 +30,11 @@ const Column_TimerDelete = ({ targetDate, usefulKey }) => {
             meeting_request_id: usefulKey
         }
 
+        const path = process.env.REACT_APP_API_URL
+
         const config = {
             method: 'delete',
-            url: '/declineRequest',
+            url: path + '/declineRequest',
             data: request_info,
             headers: {
                 'Content-Type': 'multipart/form-data',

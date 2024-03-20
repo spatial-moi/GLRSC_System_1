@@ -27,10 +27,10 @@ function Account() {
     useEffect(() => {
 
         // call api or anything
-
+        const path = process.env.REACT_APP_API_URL
         const config = {
             method: 'get',
-            url: '/account',
+            url: path + '/account',
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': "Bearer " + localStorage.getItem('access_token')
@@ -83,9 +83,10 @@ function Account() {
             longitude: longitude
         };
 
+        const path = process.env.REACT_APP_API_URL
         const config = {
             method: 'patch',
-            url: '/store_location',
+            url: path + '/store_location',
             data: coords,
             headers: {
                 'Content-Type': 'multipart/form-data',

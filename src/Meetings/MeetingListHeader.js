@@ -18,9 +18,11 @@ function MeetingListHeader() {
 
     function getRequests() {
 
+        const path = process.env.REACT_APP_API_URL
+
         const config = {
             method: 'get',
-            url: '/requests',
+            url: path + '/requests',
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': "Bearer " + localStorage.getItem('access_token')
@@ -54,9 +56,11 @@ function MeetingListHeader() {
             meeting_request_id: id
         }
 
+        const path = process.env.REACT_APP_API_URL
+
         const config = {
             method: 'delete',
-            url: '/declineRequest',
+            url: path + '/declineRequest',
             data: request_info,
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -85,9 +89,11 @@ function MeetingListHeader() {
             meeting_request_id: id
         };
 
+        const path = process.env.REACT_APP_API_URL
+
         const config = {
             method: 'post',
-            url: '/acceptRequest',
+            url: path + '/acceptRequest',
             data: request_info,
             headers: {
                 'Content-Type': 'multipart/form-data',

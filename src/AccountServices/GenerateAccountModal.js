@@ -25,8 +25,10 @@ function GenerateAccountModal ({toggleClose}) {
                 lastname: lastName
             }
 
+            const path = process.env.REACT_APP_API_URL
+
             const config = {
-                url: '/generate',
+                url: path + '/generate',
                 method: 'post',
                 data: account,
                 headers: {

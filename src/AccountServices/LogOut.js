@@ -22,12 +22,13 @@ function logOut() {
 
 
     function logOut_(event) {
+        const path = process.env.REACT_APP_API_URL
         if (requestAccepted === true || requestOut === true) {
             dispatch(messageAdded("Action cannot be done while a request is out"))
         } else {
             const config = {
                 method: 'post',
-                url: '/logout',
+                url: path + '/logout',
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': "Bearer " + localStorage.getItem('access_token')

@@ -17,8 +17,10 @@ function MeetingRequest() {
             message: accountMessage
         }
 
+        const path = process.env.REACT_APP_API_URL
+
         const config = {
-            url: '/send_request',
+            url: path + '/send_request',
             method: 'post',
             data: request,
             headers: {

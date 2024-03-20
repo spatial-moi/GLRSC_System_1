@@ -16,12 +16,14 @@ function deleteProfile() {
 
     function deleteProfile_(event) {
 
+        const path = process.env.REACT_APP_API_URL
+
         if (requestOut === true || requestAccepted === true) {
             dispatch(messageAdded("Action cannot be done while a request is out"))
         } else {
             const config = {
                 method: 'delete',
-                url: '/delete',
+                url: path + '/delete',
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': "Bearer " + localStorage.getItem('access_token')
