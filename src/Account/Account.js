@@ -1,8 +1,10 @@
 import React from 'react'
 import axios from "axios";
 import {messageAdded} from "../redux/geMessageListSlice";
-import { useDispatch } from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { useState, useEffect } from "react";
+import { locate } from "../redux/isLocatedSlice";
+import { ucReset } from "../redux/userConsoleMessageSlice";
 
 
 function Account() {
@@ -16,6 +18,9 @@ function Account() {
     const dispatch = useDispatch();
     const [lat, setLat] = useState(null);
     const [long, setLong] = useState(null);
+
+    const requestOut = useSelector(state => state.requestOut)
+    const requestAccepted = useSelector(state => state.requestAccepted)
 
 
     // useEffect used to get account details
@@ -60,13 +65,17 @@ function Account() {
     // grab Location stores users location
 
     function storelocation() {
-        if (navigator.geolocation) {
+        if (requestOut === true || requestAccepted === true) {
+            dispatch(messageAdded("Action cannot be done while a request is out"))
+        }
+        else if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(success, error);
         } else {
         }
     }
     function success(position) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
+        console.log("Success occured")
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         const coords = {
@@ -91,6 +100,8 @@ function Account() {
                     // eslint-disable-next-line react/no-direct-mutation-state
                     setLong(response.data.longitude)
                     // eslint-disable-next-line no-restricted-globals
+                    dispatch(locate())
+                    dispatch(ucReset())
                 }
             );
 
@@ -98,6 +109,7 @@ function Account() {
     }
 
     function error(error) {
+        console.log("Error occured")
         dispatch(messageAdded(error.response.data.error))
     }
 

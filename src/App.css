@@ -1,6 +1,17 @@
-.b {
+.accept-div {
   border-style: none;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
+
+#accept-request{
+  background-color: #04AA6D;;
+  color: white;
+  text-align: center;
+  flex: .5;
+}
+
 .account-details {
   flex: 1;
   font-size: 12px;
@@ -29,6 +40,9 @@
   border-width: 1px;
 }
 
+.accountMessage{
+  font-size: 14px;
+}
 .account-profile {
   display: flex;
   flex-direction: column;
@@ -63,16 +77,25 @@
 .App * {
 }
 
+.b {
+  border-style: none;
+}
 
 body {
 }
 
+.ColumnAccountPicture{
+  background-image: url("./styling_resources/pre-login.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .column1 {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   margin: 20px;
-  flex: 1;
+  flex: 1.5;
 }
 
 .column1 * {
@@ -107,7 +130,7 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
   margin: 20px;
-  flex: 2.5;
+  flex: 4.5;
 }
 
 .column2 * {
@@ -117,6 +140,10 @@ body {
   flex: 1;
   background-color: white;
 
+}
+
+.column2-box1 * {
+  border-style: none;
 }
 
 .column2-box2 {
@@ -131,6 +158,9 @@ body {
   background-color: white;
 }
 
+.column2-box3 * {
+  border-style: none;
+}
 
 .column3 {
   display: flex;
@@ -147,8 +177,11 @@ body {
 .column3-box1 {
   flex: 1;
   margin-bottom: 10px;
-  border-style: solid;
+  border-style: none;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .column3-box2 {
@@ -157,6 +190,108 @@ body {
   border-style: solid;
   background-color: white;
 }
+
+.ColumnAcceptRequest {
+  display: flex;
+  margin: 10px;
+  border-style: solid;
+  border-width: thin;
+  justify-content: center;
+}
+
+.ColumnAcceptRequest * {
+  border-style: none;
+}
+
+.ColumnAccountInfo {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 15px;
+  margin: 10px;
+  border-style: solid;
+  border-width: thin;
+}
+.ColumnAccountInfo * {
+  border-style: none;
+}
+
+.ColumnAccountMessage {
+  border-style: solid;
+  border-width: thin;
+  margin: 10px;
+}
+
+.ColumnAccountMessage * {
+  border-style: none;
+}
+
+.ColumnDeclineRequest {
+  display: flex;
+  margin: 10px;
+  border-style: solid;
+  border-width: thin;
+  justify-content: center;
+}
+
+.ColumnDeclineRequest * {
+  border-style: none;
+}
+
+.ColumnAccountPicture {
+  margin: 10px;
+  border-style: solid;
+  border-width: thin;
+}
+
+.ColumnAccountPicture * {
+  border-style: none;
+}
+
+.ColumnRequestTimer {
+  margin: 10px;
+  border-style: solid;
+  border-width: thin;
+}
+
+.ColumnRequestTimer * {
+  border-style: none;
+}
+
+.console-show-counter {
+  margin: 8px;
+  text-align: start;
+  font-size: 13px;
+}
+
+.countdown {
+  line-height: 1.25rem;
+  padding: 0 0.25rem 0 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter {
+  justify-items: center;
+  display: flex;
+}
+
+.decline-div {
+  border-style: none;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+#decline-request{
+  background-color: #f44336;
+  color: white;
+  text-align: center;
+  flex: .5;
+}
+
 
 #generate-account-button {
   border-style: none;
@@ -178,7 +313,7 @@ body {
 .ge-message {
   margin: 8px;
   text-align: start;
-  font-size: 9px;
+  font-size: 11px;
 }
 
 .introduction {
@@ -209,6 +344,36 @@ body {
   width: 60px;
 }
 
+.MeetingRequest {
+  display: flex;
+  flex: .5;
+}
+
+.MeetingListHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Meetings-Title{
+  height: 25px;
+}
+
+.MeetingListRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 15px;
+}
+
+.MeetingListRow * {
+  flex: 1;
+}
+
+.MeetingListSub {
+  overflow: auto;
+  overflow-y: scroll;
+  height: 150px;
+}
 
 .modalBackground {
   background-color: white;
@@ -234,6 +399,62 @@ body {
   margin: 0px;
 }
 
+
+#refresh-request-button{
+  height: 25px;
+}
+
+.requests-show-counter {
+  border-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+  padding: 0;
+  text-decoration: none;
+  color: #000;
+}
+
+.requests-show-counter * {
+  border-style: none;
+}
+
+
+.send-request-button-box {
+  display: flex;
+  justify-content: end;
+}
+
+.show-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.show-counter .countdown.danger {
+  color: #ff0000;
+}
+
+.show-counter .countdown > p {
+  margin: 0;
+}
+
+.show-counter .countdown > span {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .signup-button-box {
   display: flex;
   flex-direction: column;
@@ -245,4 +466,27 @@ body {
   width: 35%;
   align-self: center;
   margin-bottom: 10px;
+}
+
+.uc-title {
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 13px;
+}
+
+.uc-console {
+  margin: 8px;
+  overflow-y: auto;
+}
+
+.uc-message {
+  margin: 8px;
+  text-align: start;
+  font-size: 13px;
+}
+
+.user-console {
+  border-style: none;
+  width: auto;
+  height: auto;
 }

@@ -26,7 +26,7 @@ function GenerateAccountModal ({toggleClose}) {
             }
 
             const config = {
-                url: + '/generate',
+                url: '/generate',
                 method: 'post',
                 data: account,
                 headers: {

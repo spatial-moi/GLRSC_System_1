@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch } from 'react-redux'
 import { messageAdded } from "../redux/geMessageListSlice";
 import { invertLogIn } from "../redux/isLoggedInSlice";
+import { ucAdd } from "../redux/userConsoleMessageSlice"
 
 
 
@@ -30,6 +31,7 @@ function LogInModal( {toggleClose} ) {
 
         function addMessage(result) {
             dispatch(messageAdded(result))
+            dispatch(ucAdd("Enable location to access meeting and routing services"))
         }
 
         axios(config)
@@ -38,7 +40,8 @@ function LogInModal( {toggleClose} ) {
                     addMessage(result)
                     localStorage.setItem('access_token', response.data.access_token)
                     localStorage.setItem('username', username)
-                    dispatch(invertLogIn(true))
+                    dispatch(invertLogIn())
+
                  //   navigate('./account');
                 // set Authorization heading bear jwt
                 },
