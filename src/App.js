@@ -53,12 +53,12 @@ function App() {
               <div className="column2-box2">
               </div>
               <div className="column2-box3">
-                  {loggedIn && (!requestAccepted || !requestOut) && <MeetingListHeader/>}
+                  {loggedIn && (!requestAccepted || requestOut) && <MeetingListHeader/>}
               </div>
           </div>
           <div className="column3">
               <div className="column3-box1">
-                  {located && (!requestOut || !requestAccepted) && <MeetingRequest />}
+                  {located && (!requestOut || requestAccepted) && <MeetingRequest />}
                   {/* eslint-disable-next-line react/jsx-pascal-case */}
                   {requestOut && <MR_TimerDelete targetDate={NOW_IN_MS} />}
               </div>

@@ -39,7 +39,7 @@ const UC_TimerDelete = ({targetInfo, usefulKey}) => {
             method: 'post',
             url: path + '/getMidpoint',
             data: request_info,
-            timeout: 15000,
+            timeout: 25000,
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': "Bearer " + localStorage.getItem('access_token')
