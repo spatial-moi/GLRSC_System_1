@@ -8,6 +8,7 @@ import refreshCounterSlice from "./refreshCounterSlice";
 import incomingRequestSlice from "./incomingRequestSlice";
 import requestAcceptedSlice from "./requestAcceptedSlice";
 import midpointReturnedSlice from "./midpointReturnedSlice";
+import routeInfoListSlice from "./routeInfoListSlice";
 export default configureStore({
     reducer: {
         geMessages: geMessagesReducer,
@@ -18,6 +19,7 @@ export default configureStore({
         refreshCounter: refreshCounterSlice,
         requestList: incomingRequestSlice,
         requestAccepted: requestAcceptedSlice,
-        midpointReturned: midpointReturnedSlice
+        midpointReturned: midpointReturnedSlice,
+        routeInfo: routeInfoListSlice,
     },
 })

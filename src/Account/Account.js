@@ -75,7 +75,6 @@ function Account() {
     }
     function success(position) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        console.log("Success occured")
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         const coords = {
@@ -97,6 +96,7 @@ function Account() {
                     let result = response.data.userMessage
                     dispatch(messageAdded(result))
                     setLat(response.data.latitude)
+
                     // eslint-disable-next-line react/no-direct-mutation-state
                     setLong(response.data.longitude)
                     // eslint-disable-next-line no-restricted-globals
@@ -109,7 +109,6 @@ function Account() {
     }
 
     function error(error) {
-        console.log("Error occured")
         dispatch(messageAdded(error.response.data.error))
     }
 

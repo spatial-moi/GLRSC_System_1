@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {useDispatch, useSelector} from 'react-redux'
 import { MR_useCountdown } from "./MR_useCountdown";
 import DateTimeDisplay from "./DateTimeDisplay"
@@ -7,7 +7,8 @@ import { updateRequest } from "../redux/requestOutSlice";
 import {messageAdded} from "../redux/geMessageListSlice";
 import axios from "axios";
 import {ucAdd, ucReset} from "../redux/userConsoleMessageSlice";
-import Midpoint_Router from "../RoutingService/Midpoint_Router";
+import {updateMidpointReturned} from "../redux/midpointReturnedSlice";
+import {addCoord} from "../redux/routeInfoListSlice";
 
 
 const ShowCounter = ({ minutes, seconds }) => {
@@ -31,7 +32,7 @@ const MR_TimerDelete = ({ targetDate }) => {
             const config2 = {
                 method: 'patch',
                 url: '/getOwnerMidpoint',
-                timeout: 15000,
+                timeout: 25000,
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': "Bearer " + localStorage.getItem('access_token')
@@ -42,13 +43,23 @@ const MR_TimerDelete = ({ targetDate }) => {
                 .then((response) => {
                         let result = response.data.userMessage
                         let route_info = response.data.route_info
-                        console.log(route_info)
+                        const user_location = route_info[0]
+                        const midpoint_location = route_info[1]
+
+                        // latitude, longitude, latitude, longitude
+                        dispatch(addCoord(user_location[0]))
+                        dispatch(addCoord(user_location[1]))
+                        dispatch(addCoord(midpoint_location[0]))
+                        dispatch(addCoord(midpoint_location[1]))
                         dispatch(ucReset())
                         dispatch(ucAdd(result))
                     },
                     (error) => {
                         dispatch(messageAdded("An error has occured"))
-                    });
+                    })
+                .finally(() => {
+                    dispatch(updateMidpointReturned())
+                });
 
             const config = {
                 method: 'delete',

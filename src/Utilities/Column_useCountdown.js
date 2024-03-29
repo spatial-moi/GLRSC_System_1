@@ -6,14 +6,7 @@ const Column_useCountdown = (targetInfo) => {
     }
 
     const dateNow = new Date().getTime()
-    console.log(dateNow)
-    console.log(typeof dateNow)
-
-
     const countDownDate =  addMinutes(targetInfo, 3) ;
-    console.log(countDownDate)
-    console.log(typeof countDownDate)
-
     const [countDown, setCountDown] = useState(
          countDownDate - dateNow
     );

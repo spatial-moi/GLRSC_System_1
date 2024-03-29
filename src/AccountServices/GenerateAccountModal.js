@@ -39,8 +39,6 @@ function GenerateAccountModal ({toggleClose}) {
                 dispatch(messageAdded(result))
             }
 
-            console.log(account)
-
             axios.defaults.timeout = 5000;
             axios(config)
                 .then((response) => {

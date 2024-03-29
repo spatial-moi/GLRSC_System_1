@@ -12,7 +12,7 @@ function LogInModal( {toggleClose} ) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch()
-   // const navigate = useNavigate();
+
     function logIn(event) {
 
         var account = {
