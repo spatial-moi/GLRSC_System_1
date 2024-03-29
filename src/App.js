@@ -14,6 +14,7 @@ import MeetingRequest from "./Meetings/MeetingRequest";
 import UserConsole from "./detailer/UserConsole";
 import MR_TimerDelete from "./Utilities/MR_TimerDelete";
 import MeetingListHeader from "./Meetings/MeetingListHeader"
+import Midpoint_Router from "./RoutingService/Midpoint_Router";
 
 
 
@@ -25,11 +26,7 @@ function App() {
     const requestOut = useSelector(state => state.requestOut)
     const requestAccepted = useSelector(state => state.requestAccepted)
     const NOW_IN_MS = new Date().getTime();
-
-    const targetInfo = new Date(localStorage.getItem("THEN_IN_MS")).getTime()
-    console.log(targetInfo)
-    const usefulKey = parseInt(localStorage.getItem("usefulKey"))
-    console.log(usefulKey)
+    const midpointReturned = useSelector(state => state.midpointReturned)
 
   return (
       <div className="App">
@@ -51,6 +48,8 @@ function App() {
                   {loggedIn && <UserConsole/>}
               </div>
               <div className="column2-box2">
+                  {/* eslint-disable-next-line react/jsx-pascal-case */}
+                  {midpointReturned && <Midpoint_Router/>}
               </div>
               <div className="column2-box3">
                   {loggedIn && (!requestAccepted || requestOut) && <MeetingListHeader/>}

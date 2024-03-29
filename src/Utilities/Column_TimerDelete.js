@@ -19,8 +19,6 @@ const ShowCounter = ({ minutes, seconds }) => {
 const Column_TimerDelete = ({ targetDate, usefulKey }) => {
     const targetInfo = new Date(targetDate).getTime()
     const [ minutes, seconds] = Column_useCountdown(targetInfo);
-    console.log(minutes)
-    console.log(seconds)
     const dispatch = useDispatch()
 
     if (minutes + seconds <= 0) {

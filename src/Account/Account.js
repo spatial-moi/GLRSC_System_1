@@ -75,7 +75,6 @@ function Account() {
     }
     function success(position) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        console.log("Success occured")
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         const coords = {

@@ -18,6 +18,7 @@ return(
         <p className="uc-title"> <b id="uc-bold"> User Console: </b> </p>
         <div className="uc-console">
             {messages}
+            {/* eslint-disable-next-line react/jsx-pascal-case */}
             {requestAccepted && !midpointReturned && <UC_TimerDelete targetInfo={targetInfo} usefulKey={usefulKey}/>}
         </div>
     </div>

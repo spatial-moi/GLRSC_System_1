@@ -151,6 +151,7 @@ body {
   margin-bottom: 20px;
   margin-top: 20px;
   background-color: white;
+  display: flex;
 }
 
 .column2-box3 {
@@ -342,6 +343,16 @@ body {
 #login-button {
   border-style: none;
   width: 60px;
+}
+
+.mapContainer {
+  flex: 1;
+  position: absolute;
+  border-style: none;
+}
+
+.mapContainer * {
+  border-style: none;
 }
 
 .MeetingRequest {

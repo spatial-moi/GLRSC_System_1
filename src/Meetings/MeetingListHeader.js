@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import { messageAdded} from "../redux/geMessageListSlice";
@@ -33,14 +33,12 @@ function MeetingListHeader() {
             .then((response) => {
                     let result = response.data.userMessage
                     dispatch(messageAdded(result))
-                    console.log(response.data.requiredData)
                     dispatch(ucReset())
                     dispatch(ucAdd("Check incoming requests"))
                     if (response.data.requiredData !== undefined) {
                         const json_requests = JSON.parse(response.data.requiredData)
                         dispatch(addRequests(json_requests))
                     }
-                    console.log(requestList)
                 },
                 (error) => {
                     console.log(error.response.data.error)
@@ -120,9 +118,7 @@ function MeetingListHeader() {
 
         const requests = requestList.map(function (request) {
             const usefulKey = request.meeting_request_id
-            console.log(usefulKey)
             const THEN_IN_MS = request.created
-            console.log(THEN_IN_MS)
             return <div className="MeetingListRow">
                 <div className="ColumnAccountPicture">
                 </div>

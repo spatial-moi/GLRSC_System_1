@@ -6,6 +6,7 @@ import {messageAdded} from "../redux/geMessageListSlice";
 import {ucAdd, ucReset} from "../redux/userConsoleMessageSlice";
 import {updateMidpointReturned} from "../redux/midpointReturnedSlice";
 import {incrementRefresh} from "../redux/refreshCounterSlice";
+import {addCoord} from "../redux/routeInfoListSlice";
 
 const ShowCounter = ({ minutes, seconds }) => {
     return (
@@ -15,23 +16,16 @@ const ShowCounter = ({ minutes, seconds }) => {
     );
 };
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
 const UC_TimerDelete = ({targetInfo, usefulKey}) => {
     const refreshCounter = useSelector(state => state.refreshCounter)
-    console.log(targetInfo)
-    console.log(usefulKey)
     const [minutes, seconds] = Column_useCountdown(targetInfo);
-    console.log(minutes)
-    console.log(seconds)
     const dispatch = useDispatch()
     if (minutes + seconds === 0 && refreshCounter == 0) {
         dispatch(incrementRefresh())
         dispatch(ucReset())
-        console.log("enter execution midpoint")
         const request_info = {
             meeting_request_id: usefulKey
         };
-        console.log(request_info)
 
         const path = process.env.REACT_APP_API_URL
 
@@ -50,18 +44,27 @@ const UC_TimerDelete = ({targetInfo, usefulKey}) => {
         axios(config)
             .then((response) => {
                     const route_info = response.data.route_info;
+                    const user_location = route_info[0]
+                    const midpoint_location = route_info[1]
+
+                    // latitude, longitude, latitude, longitude
+                    dispatch(addCoord(user_location[0]))
+                    dispatch(addCoord(user_location[1]))
+                    dispatch(addCoord(midpoint_location[0]))
+                    dispatch(addCoord(midpoint_location[1]))
                     const userMessage = response.data.userMessage;
-                    console.log(route_info)
                     dispatch(ucAdd(userMessage))
                 },
                 (error) => {
                     console.log(error)
                     dispatch(messageAdded("An error occurred"))
-                });
+                })
+            .finally(() => {
+                dispatch(updateMidpointReturned())
+            });
 
         // eslint-disable-next-line no-restricted-globals
         event.preventDefault()
-        dispatch(updateMidpointReturned())
 
         return <p></p>
 

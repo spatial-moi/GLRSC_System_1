@@ -11,7 +11,6 @@ function ChangePasswordModal( {toggleClose} ) {
     const dispatch = useDispatch()
     const requestOut = useSelector(state => state.requestOut)
     const requestAccepted = useSelector(state => state.requestAccepted)
-    // const navigate = useNavigate();
     function changePassword(event) {
 
         if (requestOut === true || requestAccepted === true) {

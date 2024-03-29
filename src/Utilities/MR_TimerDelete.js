@@ -7,7 +7,8 @@ import { updateRequest } from "../redux/requestOutSlice";
 import {messageAdded} from "../redux/geMessageListSlice";
 import axios from "axios";
 import {ucAdd, ucReset} from "../redux/userConsoleMessageSlice";
-
+import {updateMidpointReturned} from "../redux/midpointReturnedSlice";
+import {addCoord} from "../redux/routeInfoListSlice";
 
 const ShowCounter = ({ minutes, seconds }) => {
     return (
@@ -43,13 +44,23 @@ const MR_TimerDelete = ({ targetDate }) => {
                 .then((response) => {
                         let result = response.data.userMessage
                         let route_info = response.data.route_info
-                        console.log(route_info)
+                        const user_location = route_info[0]
+                        const midpoint_location = route_info[1]
+
+                        // latitude, longitude, latitude, longitude
+                        dispatch(addCoord(user_location[0]))
+                        dispatch(addCoord(user_location[1]))
+                        dispatch(addCoord(midpoint_location[0]))
+                        dispatch(addCoord(midpoint_location[1]))
                         dispatch(ucReset())
                         dispatch(ucAdd(result))
                     },
                     (error) => {
-                        dispatch(messageAdded("An error has occured"))
-                    });
+                        dispatch(messageAdded("An error has occurred"))
+                    })
+                .finally(() => {
+                    dispatch(updateMidpointReturned())
+                });
 
             const config = {
                 method: 'delete',
