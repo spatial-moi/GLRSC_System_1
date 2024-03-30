@@ -16,7 +16,7 @@ const Midpoint_Router = () => {
                 container: mapContainer.current,
                 style: `mapbox://styles/mapbox/light-v11`,
                 center: [routeInformation[1], routeInformation[0]],
-                zoom: 16,
+                zoom: 12,
                 dragPan: true,
                 boxZoom: false,
                 scrollZoom: false,
