@@ -49,7 +49,7 @@ function App() {
               </div>
               <div className="column2-box2">
                   {/* eslint-disable-next-line react/jsx-pascal-case */}
-                  {midpointReturned && <Midpoint_Router/>}
+                  {loggedIn && midpointReturned && <Midpoint_Router/>}
               </div>
               <div className="column2-box3">
                   {loggedIn && (!requestAccepted || requestOut) && <MeetingListHeader/>}
