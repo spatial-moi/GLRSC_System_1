@@ -4,8 +4,6 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import {useSelector} from 'react-redux';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY
-console.log(mapboxgl.accessToken)
-console.log(process.env.REACT_APP_MAPBOX_KEY)
 const Midpoint_Router = () => {
     const [map, setMap] = useState(null);
     const mapContainer = useRef(null);
