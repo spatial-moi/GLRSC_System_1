@@ -119,7 +119,7 @@ const Midpoint_Router = () => {
             }
             setTimeout(() => {
                 getRoute()
-            }, 2000)
+            }, 10000)
             map.on("load", () => {
                 setMap(map);
                 map.resize();

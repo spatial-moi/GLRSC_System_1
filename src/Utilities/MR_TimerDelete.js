@@ -33,7 +33,7 @@ const MR_TimerDelete = ({ targetDate }) => {
             const config2 = {
                 method: 'patch',
                 url: path + '/getOwnerMidpoint',
-                timeout: 20000,
+                timeout: 50000,
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': "Bearer " + localStorage.getItem('access_token')
