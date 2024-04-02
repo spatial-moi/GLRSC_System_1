@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/GLRSC_System_1/static/css/main.03b870f7.css",
-    "main.js": "/GLRSC_System_1/static/js/main.f1f37a6d.js",
+    "main.js": "/GLRSC_System_1/static/js/main.13ea6beb.js",
     "static/js/453.d6ca838c.chunk.js": "/GLRSC_System_1/static/js/453.d6ca838c.chunk.js",
     "index.html": "/GLRSC_System_1/index.html",
     "main.03b870f7.css.map": "/GLRSC_System_1/static/css/main.03b870f7.css.map",
-    "main.f1f37a6d.js.map": "/GLRSC_System_1/static/js/main.f1f37a6d.js.map",
+    "main.13ea6beb.js.map": "/GLRSC_System_1/static/js/main.13ea6beb.js.map",
     "453.d6ca838c.chunk.js.map": "/GLRSC_System_1/static/js/453.d6ca838c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.03b870f7.css",
-    "static/js/main.f1f37a6d.js"
+    "static/js/main.13ea6beb.js"
   ]
 }
