@@ -6,7 +6,7 @@ const MR_useCountdown = (targetDate) => {
     }
 
     const dateNow = new Date().getTime()
-    const countDownDate =  addMinutes(dateNow, 3) ;
+    const countDownDate =  addMinutes(dateNow, 1) ;
     const [countDown, setCountDown] = useState(
         countDownDate - dateNow
     );
