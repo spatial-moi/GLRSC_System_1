@@ -15,6 +15,7 @@ import UserConsole from "./detailer/UserConsole";
 import MR_TimerDelete from "./Utilities/MR_TimerDelete";
 import MeetingListHeader from "./Meetings/MeetingListHeader"
 import Midpoint_Router from "./RoutingService/Midpoint_Router";
+import VideoContainer from "./detailer/VideoContainer";
 
 
 
@@ -49,6 +50,7 @@ function App() {
               </div>
               <div className="column2-box2">
                   {/* eslint-disable-next-line react/jsx-pascal-case */}
+                  {!loggedIn && <VideoContainer />}
                   {loggedIn && midpointReturned && <Midpoint_Router/>}
               </div>
               <div className="column2-box3">
