@@ -23,3 +23,4 @@ class GenerateAccount extends Component {
     }
 }
 export default GenerateAccount;
+

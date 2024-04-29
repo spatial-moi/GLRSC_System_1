@@ -23,3 +23,4 @@ export default configureStore({
         routeInfo: routeInfoListSlice
     },
 })
+

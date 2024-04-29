@@ -56,7 +56,10 @@ function MeetingRequest() {
                 <form>
                     <label>
                         <p className="accountMessage"> <b> Account Message: </b>  (75 Character Limit)</p>
-                        <textarea className="messageInput" value={accountMessage} name="accountMessage" maxLength={75} minLength={2} placeholder={"Type the reason for the request. Why do you want to meet?"} rows={8} cols={35} onChange={e => setAccountMessage(e.target.value)}/>
+                        <textarea className="messageInput" value={accountMessage} name="accountMessage"
+                                  maxLength={75} minLength={2} placeholder={"Type the reason for the request." +
+                            " Why do you want to meet?"} rows={8} cols={35} onChange={e =>
+                            setAccountMessage(e.target.value)}/>
                     </label>
                     <br></br>
                     <div className={"send-request-button-box"}>
