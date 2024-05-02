@@ -6,7 +6,7 @@ const Column_useCountdown = (targetInfo) => {
     }
 
     const dateNow = new Date().getTime()
-    const countDownDate =  addMinutes(targetInfo, 5) ;
+    const countDownDate =  addMinutes(targetInfo, 3) ;
     const [countDown, setCountDown] = useState(
          countDownDate - dateNow
     );
