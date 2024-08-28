@@ -71,6 +71,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   height: 100vh;
+  background-image: linear-gradient(90deg, #020024 0%, #4B5320 35%, #D0F0C0 100%);
 
 }
 
@@ -109,6 +110,10 @@ body {
   justify-content: center;
   flex: 1.5;
   margin-bottom: 10px;
+  background-color: white;
+  border-radius: 25px;
+  border-color: #aaaaaa;
+  border-width: thick;
 
 }
 .column1-box1 * {
@@ -119,6 +124,9 @@ body {
   flex: 1;
   margin-top: 10px;
   background-color: white;
+  border-radius: 25px;
+  border-color: #aaaaaa;
+  border-width: thick;
 }
 
 .column1-box2 * {
@@ -139,6 +147,9 @@ body {
 .column2-box1 {
   flex: 1;
   background-color: white;
+  border-radius: 25px;
+  border-color: #aaaaaa;
+  border-width: thick;
 
 }
 
@@ -152,11 +163,17 @@ body {
   margin-top: 20px;
   background-color: white;
   display: flex;
+  border-radius: 25px;
+  border-color: #aaaaaa;
+  border-width: thick;
 }
 
 .column2-box3 {
   flex: 1;
   background-color: white;
+  border-radius: 25px;
+  border-color: #aaaaaa;
+  border-width: thick;
 }
 
 .column2-box3 * {
@@ -178,11 +195,14 @@ body {
 .column3-box1 {
   flex: 1;
   margin-bottom: 10px;
-  border-style: none;
+  border-style: solid;
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 25px;
+  border-color: #aaaaaa;
+  border-width: thick;
 }
 
 .column3-box2 {
@@ -190,6 +210,9 @@ body {
   margin-top: 10px;
   border-style: solid;
   background-color: white;
+  border-radius: 25px;
+  border-color: #aaaaaa;
+  border-width: thick;
 }
 
 .ColumnAcceptRequest {
