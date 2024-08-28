@@ -1,6 +1,6 @@
 import {useSelector} from "react-redux";
 import React from "react";
-import UC_TimerDelete from "../Utilities/UC_TimerDelete";
+import UC_Timer from "../Utilities/UC_Timer";
 
 function UserConsole() {
     const ucMessage = useSelector(state => state.ucMessage)
@@ -18,7 +18,7 @@ return(
         <p className="uc-title"> <b id="uc-bold"> User Console: </b> </p>
         <div className="uc-console">
             {messages}
-            {requestAccepted && !midpointReturned && <UC_TimerDelete targetInfo={targetInfo} usefulKey={usefulKey}/>}
+            {requestAccepted && !midpointReturned && <UC_Timer targetInfo={targetInfo} usefulKey={usefulKey}/>}
         </div>
     </div>
 )

@@ -6,7 +6,7 @@ import { updateAcceptance } from "../redux/requestAcceptedSlice"
 import {resetRequests} from "../redux/incomingRequestSlice";
 import { addRequests } from "../redux/incomingRequestSlice";
 import { ucReset, ucAdd } from "../redux/userConsoleMessageSlice";
-import Column_TimerDelete from "../Utilities/Column_TimerDelete";
+import Column_Timer from "../Utilities/Column_Timer";
 
 
 function MeetingListHeader() {
@@ -126,7 +126,7 @@ function MeetingListHeader() {
                 <div className="ColumnRequestTimer">
                     <div><b>Time left to respond: </b></div>
                     {/* eslint-disable-next-line react/jsx-pascal-case */}
-                    <Column_TimerDelete targetDate={THEN_IN_MS} usefulKey={usefulKey}/>
+                    <Column_Timer targetDate={THEN_IN_MS} usefulKey={usefulKey}/>
                 </div>
                 <div className="ColumnDeclineRequest">
                     <div className="decline-div">
