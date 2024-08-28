@@ -12,7 +12,7 @@ import ChangePassword from "./AccountServices/ChangePassword";
 import DeleteProfile from "./AccountServices/DeleteProfile";
 import MeetingRequest from "./Meetings/MeetingRequest";
 import UserConsole from "./detailer/UserConsole";
-import MR_TimerDelete from "./Utilities/MR_TimerDelete";
+import MR_Timer from "./Utilities/MR_Timer";
 import MeetingListHeader from "./Meetings/MeetingListHeader"
 import Midpoint_Router from "./RoutingService/Midpoint_Router";
 import VideoContainer from "./detailer/VideoContainer";
@@ -61,7 +61,7 @@ function App() {
               <div className="column3-box1">
                   {located && (!requestOut || requestAccepted) && <MeetingRequest />}
                   {/* eslint-disable-next-line react/jsx-pascal-case */}
-                  {requestOut && <MR_TimerDelete targetDate={NOW_IN_MS} />}
+                  {requestOut && <MR_Timer targetDate={NOW_IN_MS} />}
               </div>
               <div className="column3-box2">
                   {<GeoprocessingEngine />}

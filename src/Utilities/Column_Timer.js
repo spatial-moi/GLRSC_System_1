@@ -16,7 +16,7 @@ const ShowCounter = ({ minutes, seconds }) => {
     );
 };
 
-const Column_TimerDelete = ({ targetDate, usefulKey }) => {
+const Column_Timer = ({ targetDate, usefulKey }) => {
     const targetInfo = new Date(targetDate).getTime()
     const [ minutes, seconds] = Column_useCountdown(targetInfo);
     const dispatch = useDispatch()
@@ -61,4 +61,4 @@ const Column_TimerDelete = ({ targetDate, usefulKey }) => {
     }
 };
 
-export default Column_TimerDelete;
+export default Column_Timer;

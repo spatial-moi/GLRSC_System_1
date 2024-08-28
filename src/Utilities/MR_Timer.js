@@ -20,7 +20,7 @@ const ShowCounter = ({ minutes, seconds }) => {
     );
 };
 
-const MR_TimerDelete = ({ targetDate }) => {
+const MR_Timer = ({ targetDate }) => {
         const [ minutes, seconds] = MR_useCountdown(targetDate);
         const requestOut = useSelector(state => state.requestOut)
 
@@ -93,4 +93,4 @@ const MR_TimerDelete = ({ targetDate }) => {
         }
     };
 
-export default MR_TimerDelete;
+export default MR_Timer;

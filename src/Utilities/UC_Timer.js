@@ -16,7 +16,7 @@ const ShowCounter = ({ minutes, seconds }) => {
     );
 };
 
-const UC_TimerDelete = ({targetInfo, usefulKey}) => {
+const UC_Timer = ({targetInfo, usefulKey}) => {
     const refreshCounter = useSelector(state => state.refreshCounter)
     const [minutes, seconds] = Column_useCountdown(targetInfo);
     const dispatch = useDispatch()
@@ -81,4 +81,4 @@ const UC_TimerDelete = ({targetInfo, usefulKey}) => {
     }
 };
 
-export default UC_TimerDelete;
+export default UC_Timer;
