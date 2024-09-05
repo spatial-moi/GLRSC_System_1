@@ -78,6 +78,11 @@
 .App * {
 }
 
+.attention {
+  font-size: large;
+  color: red;
+}
+
 .b {
   border-style: none;
 }

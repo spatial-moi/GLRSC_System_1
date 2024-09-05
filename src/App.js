@@ -61,6 +61,7 @@ function App() {
               <div className="column3-box1">
                   {located && (!requestOut || requestAccepted) && <MeetingRequest />}
                   {/* eslint-disable-next-line react/jsx-pascal-case */}
+                  <p className="attention">this app is under further development and usage has been temporarily suspended!!</p>
                   {requestOut && <MR_Timer targetDate={NOW_IN_MS} />}
               </div>
               <div className="column3-box2">
